@@ -49,11 +49,11 @@ int printMatriz1D(int matriz[COLUMNAS]){
 
 void minimoF(int matriz[FILAS][COLUMNAS], int valoresMinimos[COLUMNAS]){
 
-	for (int i = 0; i < COLUMNAS; ++i)
+	for (int j = 0; j < COLUMNAS; ++j)
 	{
-		valoresMinimos[i] = matriz[0][i];
+		valoresMinimos[j] = matriz[0][j];
 
-		for (int j = 0; j < FILAS; ++j)
+		for (int i = 0; i < FILAS; ++i)
 		{
 			if (valoresMinimos[j] > matriz[i][j])
 			{
@@ -71,9 +71,10 @@ int main(int argc, char const *argv[])
 	srand(time(NULL));
 	
 	int matriz[FILAS][COLUMNAS];
-	int valoresMinimos[COLUMNAS];
+	int valoresMinimos[COLUMNAS] = {0};
 
 	inicializa(matriz);
+	minimoF(matriz, valoresMinimos);
 
 	printMatriz2D(matriz);
 	printMatriz1D(valoresMinimos);
