@@ -22,14 +22,11 @@ void inicializa(int matriz[TAM][TAM]){
 int multiplica(int matrizA[TAM][TAM], int matrizB[TAM][TAM], int matrizC[TAM][TAM]){
 
 
-	for (int i = 0; i < TAM; ++i)
-	{
+	for (int i = 0; i < TAM; ++i){
 		
-		for (int j = 0; j < TAM; ++j)
-		{
+		for (int j = 0; j < TAM; ++j){
 			
-			for (int k = 0; k < TAM; ++k)
-			{
+			for (int k = 0; k < TAM; ++k){
 				
 				matrizC[i][j] = matrizC[i][j] + (matrizA[i][k] * matrizB[k][j]);
 
@@ -42,10 +39,10 @@ int multiplica(int matrizA[TAM][TAM], int matrizB[TAM][TAM], int matrizC[TAM][TA
 int printMatriz(int matriz[TAM][TAM]){
 
 	printf("\n");
-	for (int j = 0; j < TAM; ++j)
-	{
-		for (int i = 0; i < TAM; ++i)
-		{
+	for (int i = 0; i < TAM; ++i){
+
+		for (int j = 0; j < TAM; ++j){
+
 			printf("%i \t",matriz[i][j] );
 		}
 		printf("\n");
