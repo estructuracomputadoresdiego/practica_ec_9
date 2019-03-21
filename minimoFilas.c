@@ -9,11 +9,9 @@ void inicializa(int matriz[FILAS][COLUMNAS]){
 
 	int _rand;
 
-	for (int i = 0; i < FILAS; ++i)
-	{
-		for (int j = 0; j < COLUMNAS; ++j)
-		{
-			_rand=1+(rand()%(11-1));
+	for (int i = 0; i < FILAS; ++i){
+		for (int j = 0; j < COLUMNAS; ++j){
+			_rand=-10+(rand()%(-10-10));
 
 			matriz[i][j]=_rand;
 		}
@@ -34,11 +32,11 @@ int printMatriz2D(int matriz[FILAS][COLUMNAS]){
 	printf("\n");
 }
 
-int printMatriz1D(int matriz[COLUMNAS]){
+int printMatriz1D(int matriz[FILAS]){
 
 	printf("\n");
 
-	for (int i = 0; i < COLUMNAS; ++i)
+	for (int i = 0; i < FILAS; ++i)
 	{
 		printf("%i \t",matriz[i] );
 	}
@@ -47,21 +45,20 @@ int printMatriz1D(int matriz[COLUMNAS]){
 	printf("\n");
 }
 
-void minimoF(int matriz[FILAS][COLUMNAS], int valoresMinimos[COLUMNAS]){
+void minimoF(int matriz[FILAS][COLUMNAS], int valoresMinimos[FILAS]){
 
-	for (int j = 0; j < COLUMNAS; ++j)
+	for (int i = 0; i < FILAS; ++i)
 	{
-		valoresMinimos[j] = matriz[0][j];
+		valoresMinimos[i] = matriz[i][0];
 
-		for (int i = 0; i < FILAS; ++i)
+		for (int j = 0; j < COLUMNAS; ++j)
 		{
-			if (valoresMinimos[j] > matriz[i][j])
+			if (valoresMinimos[i] > matriz[i][j])
 			{
-				valoresMinimos[j] = matriz[i][j];
+				valoresMinimos[i] = matriz[i][j];
 			}
 		}
 	}
-
 }
 
 
@@ -71,7 +68,7 @@ int main(int argc, char const *argv[])
 	srand(time(NULL));
 	
 	int matriz[FILAS][COLUMNAS];
-	int valoresMinimos[COLUMNAS] = {0};
+	int valoresMinimos[FILAS];
 
 	inicializa(matriz);
 	minimoF(matriz, valoresMinimos);
